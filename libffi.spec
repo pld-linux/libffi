@@ -2,7 +2,7 @@ Summary:	Foreign Function Interface library
 Summary(pl):	Takie cu¶ wymagane przez kaffe na maczku
 Name:		libffi
 Version:	1.20
-Release:	1ppc
+Release:	2
 License:	Distributable
 Group:		Libraries
 Vendor:		Cygnus
