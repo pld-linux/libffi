@@ -1,9 +1,9 @@
 Summary:	Foreign Function Interface library
-Summary(pl):	Takie cu¶ wymagane przez kaffe na maczku
+Summary(pl):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	1.20
-Release:	2
-License:	Distributable
+Release:	3
+License:	distributable
 Group:		Libraries
 Vendor:		Cygnus
 Source0:	ftp://sourceware.cygnus.com/pub/libffi/%{name}-%{version}.tar.gz
@@ -14,25 +14,37 @@ ExclusiveArch:	ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The libffi library provides a portable, high level programming interface to
-various calling conventions. This allows a programmer to call any function
-specified by a call interface description at run-time.
+The libffi library provides a portable, high level programming
+interface to various calling conventions. This allows a programmer to
+call any function specified by a call interface description at
+run-time.
 
-Ffi stands for Foreign Function Interface. A foreign function interface is the
-popular name for the interface that allows code written in one language to call
-code written in another language. The libffi library really only provides the
-lowest, machine dependent layer of a fully featured foreign function interface.
-A layer must exist above libffi that handles type conversions for values passed
+Ffi stands for Foreign Function Interface. A foreign function
+interface is the popular name for the interface that allows code
+written in one language to call code written in another language. The
+libffi library really only provides the lowest, machine dependent
+layer of a fully featured foreign function interface. A layer must
+exist above libffi that handles type conversions for values passed
 between the two languages. 
 
 %description -l pl
-Naucz siê angielskiego.
+Biblioteka libffi dostarcza przeno¶ny, wysokopoziomowy interfejs do
+ró¿nych konwencji wywo³añ funkcji. Pozwala to programi¶cie wywo³aæ
+dowoln± funkcjê podan± przez opis interfejsu wywo³ania w czasie
+dzia³ania programu.
+
+FFI to skrót od Foreign Function Interface, czyli interfejsu do obcych
+funkcji. Jest to potoczna nazwa interfejsu pozwalaj±cego programowi
+napisanemu w jednym jêzyku wywo³ywaæ kod napisany w innym jêzyku.
+Biblioteka libffi daje tylko najni¿sz±, zale¿n± od maszyny warstwê
+pe³nego interfejsu. Potrzebne s± wy¿sze warstwy do obs³ugi konwersji
+typów dla warto¶ci przekazywanych pomiêdzy ró¿nymi jêzykami.
 
 %package devel
-Summary:    libffi development package
-Summary(pl):    libffi - czê¶æ dla programistów
-Group:      Development/Libraries
-Requires:   %{name} = %{version}
+Summary:	libffi development package
+Summary(pl):	libffi - czê¶æ dla programistów
+Group:		Development/Libraries
+Requires:	%{name} = %{version}
 
 %description devel
 Header files for libffi.
@@ -41,10 +53,10 @@ Header files for libffi.
 Pliki nag³ówkowe do biblioteki libffi.
 
 %package static
-Summary:    libffi static library
-Summary(pl):    Statyczna biblioteka libffi
-Group:      Development/Libraries
-Requires:   %{name}-devel = %{version}
+Summary:	libffi static library
+Summary(pl):	Statyczna biblioteka libffi
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}
 
 %description static
 Static version of libffi.
