@@ -7,6 +7,7 @@ License:	distributable
 Group:		Libraries
 Vendor:		Cygnus
 Source0:	ftp://sources.redhat.com/pub/libffi/%{name}-%{version}.tar.gz
+# Source0-md5:	e4c9c435ebdfcba6fa493fb1abce2ddc
 Patch0:		%{name}-pld.patch
 Patch1:		%{name}-acam.patch
 URL:		http://sources.redhat.com/libffi/
