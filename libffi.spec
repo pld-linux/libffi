@@ -8,8 +8,9 @@ Group:		Libraries
 Vendor:		Cygnus
 Source0:	ftp://sourceware.cygnus.com/pub/libffi/%{name}-%{version}.tar.gz
 URL:		http://sources.redhat.com/libffi/
-#BuildRequires:	-
-#Requires:	-
+#Note: this package is platform independent though it is (currently) only
+#      needed on ppc (to build kaffe)
+ExclusiveArch:	ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
