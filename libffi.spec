@@ -28,7 +28,7 @@ written in one language to call code written in another language. The
 libffi library really only provides the lowest, machine dependent
 layer of a fully featured foreign function interface. A layer must
 exist above libffi that handles type conversions for values passed
-between the two languages. 
+between the two languages.
 
 %description -l pl
 Biblioteka libffi dostarcza przeno¶ny, wysokopoziomowy interfejs do
