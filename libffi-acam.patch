@@ -1,0 +1,43 @@
+--- libffi-1.20/configure.in.orig	Sat Dec 28 22:34:54 2002
++++ libffi-1.20/configure.in	Sat Dec 28 22:38:30 2002
+@@ -7,6 +7,7 @@
+ AM_INIT_AUTOMAKE(libffi,1.20)
+ 
+ AC_PROG_CC
++AM_PROG_AS
+ AM_PROG_LIBTOOL
+ 
+ TARGETDIR="unknown"
+--- libffi-1.20/src/Makefile.am.orig	Mon Oct  5 11:23:27 1998
++++ libffi-1.20/src/Makefile.am	Sat Dec 28 23:05:05 2002
+@@ -19,14 +19,14 @@
+ lib_LTLIBRARIES = libffi.la
+ noinst_PROGRAMS = ffitest
+ 
+-TARGET_SRC_MIPS_GCC = mips/ffi.c mips/o32.S mips/n32.S
+-TARGET_SRC_MIPS_SGI = mips/ffi.c mips/o32.s mips/n32.s
+-TARGET_SRC_X86 = x86/ffi.c x86/sysv.S
+-TARGET_SRC_SPARC = sparc/ffi.c sparc/v8.S
+-TARGET_SRC_ALPHA = alpha/ffi.c alpha/osf.S
+-TARGET_SRC_M68K = m68k/ffi.c m68k/sysv.S
+-TARGET_SRC_POWERPC = powerpc/ffi.c powerpc/sysv.S
+-TARGET_SRC_ARM =  arm/sysv.S arm/ffi.c
++TARGET_SRC_MIPS_GCC = mips/mips_ffi.c mips/mips_gcc_o32.S mips/mips_gcc_n32.S
++TARGET_SRC_MIPS_SGI = mips/mips_ffi.c mips/mips_sgi_o32.s mips/mips_sgi_n32.s
++TARGET_SRC_X86 = x86/x86_ffi.c x86/x86_sysv.S
++TARGET_SRC_SPARC = sparc/sparc_ffi.c sparc/sparc_v8.S
++TARGET_SRC_ALPHA = alpha/alpha_ffi.c alpha/alpha_osf.S
++TARGET_SRC_M68K = m68k/m68k_ffi.c m68k/m68k_sysv.S
++TARGET_SRC_POWERPC = powerpc/powerpc_ffi.c powerpc/powerpc_sysv.S
++TARGET_SRC_ARM =  arm/arm_sysv.S arm/arm_ffi.c
+ 
+ ##libffi_la_SOURCES = debug.c prep_cif.c types.c $(TARGET_SRC_@TARGET@)
+ ## Work around automake deficiency
+@@ -92,6 +92,7 @@
+ endif
+ 
+ INCLUDES = -I$(top_srcdir)/include -I../include
++AM_CCASFLAGS = $(INCLUDES)
+ 
+ test:	ffitest
+ 	./ffitest

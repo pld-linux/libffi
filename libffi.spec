@@ -2,15 +2,17 @@ Summary:	Foreign Function Interface library
 Summary(pl):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	1.20
-Release:	3
+Release:	4
 License:	distributable
 Group:		Libraries
 Vendor:		Cygnus
-Source0:	ftp://sourceware.cygnus.com/pub/libffi/%{name}-%{version}.tar.gz
+Source0:	ftp://sources.redhat.com/pub/libffi/%{name}-%{version}.tar.gz
+Patch0:		%{name}-pld.patch
+Patch1:		%{name}-acam.patch
 URL:		http://sources.redhat.com/libffi/
-#Note: this package is platform independent though it is (currently) only
-#      needed on ppc (to build kaffe)
-ExclusiveArch:	ppc
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,14 +68,34 @@ Statyczna wersja biblioteki libffi.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+
+# automake hell: patch below hundred lines requires files renaming
+cd src/mips
+mv -f {,mips_}ffi.c
+mv -f {,mips_gcc_}o32.S
+mv -f {,mips_gcc_}n32.S
+mv -f {,mips_sgi_}o32.s
+mv -f {,mips_sgi_}n32.s
+for d in alpha arm m68k powerpc sparc x86 ; do
+	cd ../$d
+	for f in * ; do
+		mv -f $f ${d}_$f
+	done
+done
 
 %build
-%configure2_13
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
@@ -86,13 +108,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README ChangeLog LICENSE
-%attr(755,root,root) %{_libdir}/libffi.so.*
+%attr(755,root,root) %{_libdir}/libffi.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libffi.so
 %{_libdir}/*.la
-%{_includedir}
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
