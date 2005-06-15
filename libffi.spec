@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	Foreign Function Interface library
 Summary(pl):	Biblioteka Foreign Function Interface
 Name:		libffi
@@ -91,7 +94,8 @@ done
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 
 %{__make}
 
@@ -117,6 +121,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.la
 %{_includedir}/*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
+%endif
