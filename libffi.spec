@@ -50,7 +50,7 @@ typów dla warto¶ci przekazywanych pomiêdzy ró¿nymi jêzykami.
 Summary:	libffi development package
 Summary(pl):	libffi - czê¶æ dla programistów
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libffi.
@@ -62,7 +62,7 @@ Pliki nag³ówkowe do biblioteki libffi.
 Summary:	libffi static library
 Summary(pl):	Statyczna biblioteka libffi
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libffi.
