@@ -2,7 +2,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Foreign Function Interface library
-Summary(pl):	Biblioteka Foreign Function Interface
+Summary(pl.UTF-8):   Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	1.20
 Release:	4
@@ -33,41 +33,41 @@ layer of a fully featured foreign function interface. A layer must
 exist above libffi that handles type conversions for values passed
 between the two languages.
 
-%description -l pl
-Biblioteka libffi dostarcza przeno¶ny, wysokopoziomowy interfejs do
-ró¿nych konwencji wywo³añ funkcji. Pozwala to programi¶cie wywo³aæ
-dowoln± funkcjê podan± przez opis interfejsu wywo³ania w czasie
-dzia³ania programu.
+%description -l pl.UTF-8
+Biblioteka libffi dostarcza przenoÅ›ny, wysokopoziomowy interfejs do
+rÃ³Å¼nych konwencji wywoÅ‚aÅ„ funkcji. Pozwala to programiÅ›cie wywoÅ‚aÄ‡
+dowolnÄ… funkcjÄ™ podanÄ… przez opis interfejsu wywoÅ‚ania w czasie
+dziaÅ‚ania programu.
 
-FFI to skrót od Foreign Function Interface, czyli interfejsu do obcych
-funkcji. Jest to potoczna nazwa interfejsu pozwalaj±cego programowi
-napisanemu w jednym jêzyku wywo³ywaæ kod napisany w innym jêzyku.
-Biblioteka libffi daje tylko najni¿sz±, zale¿n± od maszyny warstwê
-pe³nego interfejsu. Potrzebne s± wy¿sze warstwy do obs³ugi konwersji
-typów dla warto¶ci przekazywanych pomiêdzy ró¿nymi jêzykami.
+FFI to skrÃ³t od Foreign Function Interface, czyli interfejsu do obcych
+funkcji. Jest to potoczna nazwa interfejsu pozwalajÄ…cego programowi
+napisanemu w jednym jÄ™zyku wywoÅ‚ywaÄ‡ kod napisany w innym jÄ™zyku.
+Biblioteka libffi daje tylko najniÅ¼szÄ…, zaleÅ¼nÄ… od maszyny warstwÄ™
+peÅ‚nego interfejsu. Potrzebne sÄ… wyÅ¼sze warstwy do obsÅ‚ugi konwersji
+typÃ³w dla wartoÅ›ci przekazywanych pomiÄ™dzy rÃ³Å¼nymi jÄ™zykami.
 
 %package devel
 Summary:	libffi development package
-Summary(pl):	libffi - czê¶æ dla programistów
+Summary(pl.UTF-8):   libffi - czÄ™Å›Ä‡ dla programistÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libffi.
 
-%description devel -l pl
-Pliki nag³ówkowe do biblioteki libffi.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe do biblioteki libffi.
 
 %package static
 Summary:	libffi static library
-Summary(pl):	Statyczna biblioteka libffi
+Summary(pl.UTF-8):   Statyczna biblioteka libffi
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libffi.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki libffi.
 
 %prep
