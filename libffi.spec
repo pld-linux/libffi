@@ -2,7 +2,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Foreign Function Interface library
-Summary(pl.UTF-8):   Biblioteka Foreign Function Interface
+Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	1.20
 Release:	4
@@ -48,7 +48,7 @@ typów dla wartości przekazywanych pomiędzy różnymi językami.
 
 %package devel
 Summary:	libffi development package
-Summary(pl.UTF-8):   libffi - część dla programistów
+Summary(pl.UTF-8):	libffi - część dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -60,7 +60,7 @@ Pliki nagłówkowe do biblioteki libffi.
 
 %package static
 Summary:	libffi static library
-Summary(pl.UTF-8):   Statyczna biblioteka libffi
+Summary(pl.UTF-8):	Statyczna biblioteka libffi
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
