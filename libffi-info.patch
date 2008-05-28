@@ -1,0 +1,14 @@
+--- libffi-3.0.5/doc/libffi.texi.orig	2008-02-14 21:33:17.000000000 +0100
++++ libffi-3.0.5/doc/libffi.texi	2008-05-28 22:40:24.456981592 +0200
+@@ -31,9 +31,9 @@
+ @end quotation
+ @end copying
+ 
+-@dircategory
++@dircategory Libraries:
+ @direntry
+-* libffi: (libffi).             Portable foreign-function interface library.
++* libffi: (libffi).			Portable foreign-function interface library
+ @end direntry
+ 
+ @titlepage
