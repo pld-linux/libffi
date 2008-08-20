@@ -5,13 +5,13 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.0.5
+Version:	3.0.6
 Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
-# Source0-md5:	29544f542140da929221805e332407b9
+# Source0-md5:	8994a7e0e8baeedf63e3d0d94d75ac68
 Patch0:		%{name}-info.patch
 URL:		http://sources.redhat.com/libffi/
 BuildRequires:	autoconf >= 2.59
