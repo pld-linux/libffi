@@ -13,6 +13,7 @@ Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
 # Source0-md5:	188a4f79fdac2310044b44b7d3918ef9
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-m4.patch
 URL:		http://sources.redhat.com/libffi/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -73,6 +74,7 @@ Statyczna wersja biblioteki libffi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
