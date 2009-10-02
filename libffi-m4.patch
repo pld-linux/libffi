@@ -1,0 +1,10 @@
+--- libffi-3.0.8/configure.ac.orig	2008-12-19 17:12:30.000000000 +0100
++++ libffi-3.0.8/configure.ac	2009-10-03 00:42:18.688606747 +0200
+@@ -20,6 +20,7 @@
+ m4_rename([_AC_ARG_VAR_PRECIOUS],[real_PRECIOUS])
+ m4_define([_AC_ARG_VAR_PRECIOUS],[])
+ AC_PROG_CC
++m4_undefine([_AC_ARG_VAR_PRECIOUS])
+ m4_rename([real_PRECIOUS],[_AC_ARG_VAR_PRECIOUS])
+ 
+ AC_SUBST(CFLAGS)
