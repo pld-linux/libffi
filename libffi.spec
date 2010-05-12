@@ -17,6 +17,7 @@ URL:		http://sources.redhat.com/libffi/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
