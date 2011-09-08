@@ -1,3 +1,4 @@
+# NOTE: currently PLD libffi packages are built from gcc.spec
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
@@ -5,13 +6,13 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.0.9
-Release:	1
+Version:	3.0.10
+Release:	1.1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
-# Source0-md5:	1f300a7a7f975d4046f51c3022fa5ff1
+# Source0-md5:	79390673f5d07a8fb342bc09b5055b6f
 Patch0:		%{name}-info.patch
 URL:		http://sources.redhat.com/libffi/
 BuildRequires:	autoconf >= 2.63
@@ -92,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm $RPM_BUILD_ROOT%{_infodir}/dir
+%{__rm} $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
