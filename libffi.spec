@@ -93,8 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_infodir}/dir
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
