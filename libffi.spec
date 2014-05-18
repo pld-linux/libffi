@@ -1,4 +1,3 @@
-# NOTE: currently PLD libffi packages are built from gcc.spec
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
@@ -6,13 +5,13 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.0.13
-Release:	0.1
+Version:	3.1
+Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
-# Source0-md5:	45f3b6dbc9ee7c7dfbbbc5feba571529
+# Source0-md5:	6640332e06de40beb968aa12ff640c4a
 Patch0:		%{name}-info.patch
 URL:		http://sources.redhat.com/libffi/
 BuildRequires:	texinfo
