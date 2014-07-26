@@ -6,14 +6,18 @@ Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	3.1
-Release:	1
+Release:	2
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
 # Source0-md5:	6640332e06de40beb968aa12ff640c4a
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pc.patch
 URL:		http://sources.redhat.com/libffi/
+BuildRequires:	autoconf >= 2.68
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,8 +75,14 @@ Statyczna wersja biblioteki libffi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
 
