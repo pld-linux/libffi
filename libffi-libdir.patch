@@ -1,0 +1,11 @@
+--- libffi-3.2.1/configure.ac.orig	2014-11-12 12:56:51.000000000 +0100
++++ libffi-3.2.1/configure.ac	2014-12-09 19:45:15.750254077 +0100
+@@ -604,7 +604,7 @@
+   multi_os_directory=`$CC $CFLAGS -print-multi-os-directory`
+   case $multi_os_directory in
+     .) ;; # Avoid trailing /.
+-    ../*) toolexeclibdir=$toolexeclibdir/$multi_os_directory ;;
++    ../*) toolexeclibdir=$(dirname $toolexeclibdir)/${multi_os_directory#../} ;;
+   esac
+   AC_SUBST(toolexecdir)
+ else
