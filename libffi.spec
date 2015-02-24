@@ -6,7 +6,7 @@ Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	3.2.1
-Release:	2
+Release:	3
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
