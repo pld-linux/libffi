@@ -1,14 +1,14 @@
---- libffi-3.0.9/doc/libffi.texi.orig	2009-12-29 16:22:26.000000000 +0100
-+++ libffi-3.0.9/doc/libffi.texi	2010-03-25 07:44:51.098705217 +0100
-@@ -31,9 +31,9 @@
- @end quotation
+--- libffi-3.3/doc/libffi.texi.orig	2020-02-09 08:11:06.755529478 +0100
++++ libffi-3.3/doc/libffi.texi	2020-02-09 08:11:46.371981524 +0100
+@@ -41,9 +41,9 @@
+ 
  @end copying
  
 -@dircategory Development
 +@dircategory Libraries:
  @direntry
--* libffi: (libffi).             Portable foreign-function interface library.
-+* libffi: (libffi).			Portable foreign-function interface library
+-* libffi: (libffi).             Portable foreign function interface library.
++* libffi: (libffi).			Portable foreign function interface library
  @end direntry
  
  @titlepage

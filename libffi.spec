@@ -5,17 +5,16 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.2.1
-Release:	4
+Version:	3.3
+Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
-# Source0-md5:	83b89587607e3eb65c70d361f13bab43
+# Source0-md5:	6313289e32f1d38a9df4770b014a2ca7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-libdir.patch
-Patch2:		%{name}-includedir.patch
-URL:		http://sources.redhat.com/libffi/
+URL:		http://www.sourceware.org/libffi/
 BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake
 BuildRequires:	libltdl-devel
@@ -78,7 +77,6 @@ Statyczna wersja biblioteki libffi.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -111,9 +109,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog* LICENSE README
+%doc ChangeLog* LICENSE README.md
 %attr(755,root,root) %{_libdir}/libffi.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libffi.so.6
+%attr(755,root,root) %ghost %{_libdir}/libffi.so.7
 
 %files devel
 %defattr(644,root,root,755)
