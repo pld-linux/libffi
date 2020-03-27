@@ -13,7 +13,6 @@ Group:		Libraries
 Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
 # Source0-md5:	6313289e32f1d38a9df4770b014a2ca7
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-libdir.patch
 URL:		http://www.sourceware.org/libffi/
 BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake
@@ -76,7 +75,6 @@ Statyczna wersja biblioteki libffi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -85,6 +83,7 @@ Statyczna wersja biblioteki libffi.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-multi-os-directory \
 	%{!?with_static_libs:--disable-static}
 
 %{__make}
