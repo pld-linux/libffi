@@ -5,13 +5,14 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.3
+Version:	3.4.2
 Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
-Source0:	ftp://sourceware.org/pub/libffi/%{name}-%{version}.tar.gz
-# Source0-md5:	6313289e32f1d38a9df4770b014a2ca7
+#Source0Download: https://github.com/libffi/libffi/releases/
+Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	294b921e6cf9ab0fbaea4b639f8fdbe8
 Patch0:		%{name}-info.patch
 URL:		http://www.sourceware.org/libffi/
 BuildRequires:	autoconf >= 2.68
@@ -110,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog* LICENSE README.md
 %attr(755,root,root) %{_libdir}/libffi.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libffi.so.7
+%attr(755,root,root) %ghost %{_libdir}/libffi.so.8
 
 %files devel
 %defattr(644,root,root,755)
