@@ -5,14 +5,14 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.4.2
+Version:	3.4.4
 Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libffi/libffi/releases/
 Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	294b921e6cf9ab0fbaea4b639f8fdbe8
+# Source0-md5:	0da1a5ed7786ac12dcbaf0d499d8a049
 Patch0:		%{name}-info.patch
 URL:		http://www.sourceware.org/libffi/
 BuildRequires:	autoconf >= 2.68
