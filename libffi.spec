@@ -1,18 +1,18 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static library
+%bcond_without	static_libs	# static library
 #
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.4.4
+Version:	3.4.6
 Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libffi/libffi/releases/
 Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	0da1a5ed7786ac12dcbaf0d499d8a049
+# Source0-md5:	b9cac6c5997dca2b3787a59ede34e0eb
 Patch0:		%{name}-info.patch
 URL:		http://www.sourceware.org/libffi/
 BuildRequires:	autoconf >= 2.68
