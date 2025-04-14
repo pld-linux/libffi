@@ -5,20 +5,20 @@
 Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
-Version:	3.4.6
+Version:	3.4.8
 Release:	1
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libffi/libffi/releases/
 Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b9cac6c5997dca2b3787a59ede34e0eb
+# Source0-md5:	ba5fc49d57d13b9e6cecd0c78d76688b
 Patch0:		%{name}-info.patch
 URL:		http://www.sourceware.org/libffi/
-BuildRequires:	autoconf >= 2.68
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake
-BuildRequires:	libltdl-devel
-BuildRequires:	libtool
+BuildRequires:	libltdl-devel >= 2:2
+BuildRequires:	libtool >= 2:2
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,11 +78,14 @@ Statyczna wersja biblioteki libffi.
 %patch -P0 -p1
 
 %build
+%if 0
+# as of 3.4.[78] build fails in strange way after ac/am/lt rebuild???
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+%endif
 %configure \
 	--disable-multi-os-directory \
 	%{!?with_static_libs:--disable-static}
