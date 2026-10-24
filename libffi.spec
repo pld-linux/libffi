@@ -6,7 +6,7 @@ Summary:	Foreign Function Interface library
 Summary(pl.UTF-8):	Biblioteka Foreign Function Interface
 Name:		libffi
 Version:	3.5.2
-Release:	1
+Release:	2
 Epoch:		7
 License:	MIT-like
 Group:		Libraries
@@ -53,7 +53,7 @@ typów dla wartości przekazywanych pomiędzy różnymi językami.
 Summary:	libffi development package
 Summary(pl.UTF-8):	libffi - część dla programistów
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files for libffi.
@@ -65,7 +65,7 @@ Pliki nagłówkowe do biblioteki libffi.
 Summary:	libffi static library
 Summary(pl.UTF-8):	Statyczna biblioteka libffi
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description static
 Static version of libffi.
